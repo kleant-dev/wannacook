@@ -11,9 +11,11 @@ import Recipes from "./pages/Recipes";
 import Favourites from "./pages/Favourites";
 import About from "./pages/About";
 import GlobalStyle from "./ui/GlobalStyles";
+import { RecipesProvider } from "./context/RecipesContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-const appId = `0c8b59aa`;
-const appKey = `aa5cf18650e835bcff9a8cf7ff2bd26e`;
+const client = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,13 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <RouterProvider router={router}></RouterProvider>;
+      <QueryClientProvider client={client}>
+        <ReactQueryDevtools initialIsOpen={true} />
+        <GlobalStyle />
+        <RecipesProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </RecipesProvider>
+      </QueryClientProvider>
     </>
   );
 }

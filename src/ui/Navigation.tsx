@@ -40,7 +40,7 @@ const Link = styled(NavLink)`
   &:visited {
     text-decoration: none;
     font-size: 2.4rem;
-    font-weight: 600;
+    font-weight: 300;
     color: var(--grey-color);
     padding: 0.8rem 1.6rem;
     transition: all 0.3s;

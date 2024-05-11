@@ -3,14 +3,14 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 :root{
 
-    --primary-color: #f08c00;
-    --secondary-color: #f59f00;
+    --primary-color: #fcc419;
+    --secondary-color:#ffd43b;
     --grey-color:#495057;
     --background-color:#f8f9fa;
 }
 
 body {
-    font-size: 62.5%;
+    font-size: 1.6rem;
     padding:0;
     margin:0;
     box-sizing: border-box;

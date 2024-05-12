@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CenteredContainer } from "../../ui/CenteredContainer";
 
-const StyledHero = styled.div`
+const StyledHero = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
@@ -23,7 +23,9 @@ const HeroContent = styled.div`
 `;
 
 const HeroImage = styled.div`
-  overflow: hidden;
+  & div {
+    overflow: hidden;
+  }
   & img {
     width: 100%;
     transition: all 1.5s;
@@ -110,11 +112,13 @@ function Hero() {
             <img src="/src/data/customer-3.jpg" alt="customer" />
             <img src="/src/data/customer-4.jpg" alt="customer" />
             <img src="/src/data/customer-5.jpg" alt="customer" />
-            <p>2000+ people use our recipes everyday</p>
+            <p>2000+ people use our recipes daily</p>
           </Customers>
         </HeroContent>
         <HeroImage>
-          <img src="/src/data/woman-cooking.avif" alt="chef" />
+          <div>
+            <img src="/src/data/woman-cooking.avif" alt="chef" />
+          </div>
         </HeroImage>
       </StyledHero>
     </CenteredContainer>

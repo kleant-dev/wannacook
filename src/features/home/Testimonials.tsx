@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CenteredContainer } from "../../ui/CenteredContainer";
 
-const StyledTestimonials = styled.div`
+const StyledTestimonials = styled.section`
   padding: 9.2rem 3.2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

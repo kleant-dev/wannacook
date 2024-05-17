@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledRecipes = styled.div`
   height: 100vh;
-  background-color: var(--background-color);
+  background-color: #fff9db;
 `;
 
 function Recipes() {

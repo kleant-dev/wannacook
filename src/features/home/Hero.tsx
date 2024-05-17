@@ -36,10 +36,11 @@ const HeroImage = styled.div`
 `;
 
 const Description = styled.p`
-  font-size: 3.2rem;
+  font-size: 2.6rem;
   padding: 3.2rem 0 3.2rem 0;
   font-weight: 400;
   color: #333;
+  line-height: 1.8;
 `;
 
 const Button = styled.button`
@@ -98,7 +99,8 @@ function Hero() {
           <Tag>In the kitchen</Tag>
           <Title>Unlock your inner Masterchef</Title>
           <Description>
-            10000+ recipes featuring salads, soups deserts and more
+            Welcome to wannacook, your ultimate destination for discovering
+            delicious recipes to tantalize your taste buds!
           </Description>
 
           <Link to="/recipes">

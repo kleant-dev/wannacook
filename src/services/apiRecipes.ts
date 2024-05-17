@@ -6,7 +6,7 @@ const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
 const searchQueryUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=`;
 const cuisineUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&cuisine=`;
-const mealTypeUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=`;
+const mealTypeUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&type=`;
 type Recipes = {
   number: number;
   offset: number;
@@ -45,6 +45,23 @@ type RecipeDetails = {
   glutenFree: boolean;
   instructions: string;
   license: string;
+  nutrition: {
+    nutrients: {
+      name: string;
+      amount: number;
+      unit: string;
+      percentOfDailyNeeds: number;
+    }[];
+    properties: { name: string; amount: number; unit: string }[];
+    flavonoids: { name: string; amount: number; unit: string }[];
+    ingredients: { id: number; name: string; amount: number; unit: string }[];
+    caloricBreakdown: {
+      percentProtein: number;
+      percentFat: number;
+      percentCarbs: number;
+    };
+    weightPerServing: { amount: number; unit: string };
+  };
   lowFodmap: boolean;
   occasions: string[];
   originalId: number | null;
@@ -143,18 +160,21 @@ export async function getRecipes(query: string): Promise<Recipes | null> {
   }
 }
 
+export let details: undefined | RecipeDetails;
+
 export async function getRecipeDetails(
   id: string | undefined
 ): Promise<RecipeDetails | null> {
   try {
     const res = await fetch(
-      `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}?includeNutrition=true`
+      `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`
     );
     if (!res.ok) {
       throw new Error("Something went wrong");
     }
     const data = await res.json();
     if (!data) throw new Error("Could not find any recipes");
+    details = data;
     return data;
   } catch (err) {
     throw new Error(

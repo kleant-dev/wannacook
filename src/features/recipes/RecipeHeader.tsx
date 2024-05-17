@@ -12,6 +12,8 @@ const StyledRecipeHeader = styled.div`
     font-size: 2rem;
     font-weight: 700;
     color: #333;
+    text-align: center;
+    line-height: 1.4;
   }
 
   & div {
@@ -31,7 +33,7 @@ const StyledRecipeHeader = styled.div`
   }
 
   &:hover {
-    background-color: #f1f3f5;
+    background-color: #fff3bf;
     cursor: pointer;
   }
 `;

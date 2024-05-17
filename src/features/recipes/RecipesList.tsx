@@ -15,7 +15,6 @@ export type RecipeHeaderType = {
 };
 
 const StyledRecipeList = styled.div`
-  background-color: var(--background-color);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4.6rem;
@@ -43,7 +42,7 @@ function RecipesList() {
     );
   if (recipes && recipes.results.length > 0)
     return (
-      <CenteredContainer color="var(--background-color)">
+      <CenteredContainer color="#fff9db">
         <StyledRecipeList>
           {recipes.results.map((recipe: RecipeHeaderType) => (
             <RecipeHeader

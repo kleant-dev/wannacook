@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -48,14 +49,19 @@ function RecipeHeader({
   image: string;
 }) {
   const navigate = useNavigate();
-  return (
+  const [isError, setIsError] = useState(false);
+  return !isError ? (
     <StyledRecipeHeader onClick={() => navigate(`/recipes/${id}`)}>
       <div>
-        <img src={image} alt={`${title} image`} />
+        <img
+          onError={() => setIsError(true)}
+          src={image}
+          alt={`${title} image`}
+        />
       </div>
       <p>{title}</p>
     </StyledRecipeHeader>
-  );
+  ) : null;
 }
 
 export default RecipeHeader;

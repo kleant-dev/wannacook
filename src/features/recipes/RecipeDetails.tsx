@@ -14,6 +14,11 @@ const StyledRecipeDetails = styled.section`
     object-fit: cover;
     margin: 0 auto;
   }
+  @media (max-width: 52rem) {
+    & img {
+      max-width: 100%;
+    }
+  }
 `;
 
 const Header = styled.div`
@@ -41,6 +46,9 @@ const Tags = styled.ul`
 
   & li span {
     font-size: 2rem;
+    @media (max-width: 50rem) {
+      font-size: 2.6rem;
+    }
   }
 
   & p {
@@ -48,6 +56,9 @@ const Tags = styled.ul`
     font-weight: 600;
     text-transform: uppercase;
     color: #f08c00;
+    @media (max-width: 50rem) {
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -63,6 +74,14 @@ const Ingredients = styled.ul`
     font-weight: 600;
     text-transform: uppercase;
     color: #f08c00;
+    @media (max-width: 50rem) {
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: 50rem) {
+    & li {
+      font-size: 2.6rem;
+    }
   }
 `;
 
@@ -73,6 +92,7 @@ const Grid = styled.div`
 `;
 
 const Instructions = styled.div`
+  padding: 3.2rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -85,6 +105,14 @@ const Instructions = styled.div`
     font-weight: 600;
     text-transform: uppercase;
     color: #f08c00;
+  }
+  @media (max-width: 50rem) {
+    & p {
+      font-size: 3rem;
+    }
+    & li {
+      font-size: 2rem;
+    }
   }
 
   & span {
@@ -114,6 +142,11 @@ const Wine = styled.div`
     color: #333;
     font-size: 1.8rem;
     line-height: 1.6;
+  }
+  @media (max-width: 50rem) {
+    & h3 {
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -154,6 +187,9 @@ const MainInfo = styled.div`
   row-gap: 5.4rem;
   grid-column: span 2;
   align-items: start;
+  @media (max-width: 50rem) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Nutrients = styled.div`
@@ -165,6 +201,10 @@ const Nutrients = styled.div`
   padding-left: 3.2rem;
   grid-column: span 2;
   width: 80%;
+  @media (max-width: 50rem) {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
 `;
 function RecipeDetails() {
   const { recipeDetails, isLoading, error } = useRecipeDetails();

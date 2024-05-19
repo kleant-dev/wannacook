@@ -8,6 +8,10 @@ const StyledTestimonials = styled.section`
   column-gap: 10rem;
   row-gap: 12.6rem;
   justify-items: center;
+  @media (max-width: 66rem) {
+    grid-template-columns: 1fr;
+    row-gap: 6.4rem;
+  }
 `;
 const Heading = styled.div`
   display: flex;
@@ -17,6 +21,17 @@ const Heading = styled.div`
     font-weight: 700;
     color: #333;
     margin: 0 auto;
+  }
+
+  @media (max-width: 66rem) {
+    & h2 {
+      font-size: 3.6rem;
+    }
+  }
+  @media (max-width: 43rem) {
+    & h2 {
+      font-size: 2.8rem;
+    }
   }
 `;
 

@@ -20,6 +20,9 @@ const Input = styled.input`
   outline-offset: 0.5rem;
   border-radius: 0.8rem;
   background-color: var(--background-color);
+  @media (max-width: 50rem) {
+    width: 50rem;
+  }
 `;
 
 const Header = styled.div`
@@ -35,12 +38,13 @@ const Header = styled.div`
 `;
 const Form = styled.form`
   position: relative;
+
   & button {
     border: none;
     background: none;
     position: absolute;
     right: 1.2rem;
-    top: 1.2rem;
+    top: 0.6rem;
     cursor: pointer;
   }
 `;

@@ -18,6 +18,12 @@ const StyledRecipeList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4.6rem;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Error = styled.p`

@@ -8,6 +8,12 @@ const StyledHero = styled.section`
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   column-gap: 4.8rem;
+  @media (max-width: 90rem) {
+    grid-template-columns: 1fr;
+    row-gap: 7.4rem;
+    margin: 0 auto;
+    align-content: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -16,22 +22,45 @@ const Title = styled.h1`
   letter-spacing: 0.3px;
   color: #333;
   margin: 0;
+  @media (max-width: 43rem) {
+    font-size: 7.2rem;
+  }
 `;
 
 const HeroContent = styled.div`
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 90rem) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const HeroImage = styled.div`
   & div {
     overflow: hidden;
+    width: 100%;
+    padding: 0;
+    display: flex;
   }
   & img {
     width: 100%;
     transition: all 1.5s;
   }
-  & img:hover {
-    transform: scale(1.05);
+
+  @media (max-width: 900px) {
+    & img {
+      width: 80%;
+    }
+    & div {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 768px) {
+    & img {
+      width: 100%;
+    }
   }
 `;
 
@@ -76,10 +105,15 @@ const Customers = styled.div`
     height: 6.4rem;
     border-radius: 50%;
     margin-right: -1.2rem;
+    @media (max-width: 43rem) {
+      width: 5.4rem;
+      height: 5.4rem;
+    }
   }
   & p {
     margin-left: 2rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    color: #555;
   }
 `;
 

@@ -18,6 +18,17 @@ body {
 }
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+
+
+    @media(max-width:1080px){
+        
+        font-size: 50%;
+    }
+
+    @media(max-width:900px){
+        font-size:42%;
+    }
 }`;
 
 export default GlobalStyle;

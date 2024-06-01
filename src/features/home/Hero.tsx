@@ -143,17 +143,17 @@ function Hero() {
             </Button>
           </Link>
           <Customers>
-            <img src="/src/data/customer-1.jpg" alt="customer" />
-            <img src="/src/data/customer-2.jpg" alt="customer" />
-            <img src="/src/data/customer-3.jpg" alt="customer" />
-            <img src="/src/data/customer-4.jpg" alt="customer" />
-            <img src="/src/data/customer-5.jpg" alt="customer" />
+            <img src="/customer-1.jpg" alt="customer" />
+            <img src="/customer-2.jpg" alt="customer" />
+            <img src="/customer-3.jpg" alt="customer" />
+            <img src="/customer-4.jpg" alt="customer" />
+            <img src="/customer-5.jpg" alt="customer" />
             <p>2000+ people use our recipes daily</p>
           </Customers>
         </HeroContent>
         <HeroImage>
           <div>
-            <img src="/src/data/woman-cooking.webp" alt="chef" />
+            <img src="/woman-cooking.webp" alt="chef" />
           </div>
         </HeroImage>
       </StyledHero>

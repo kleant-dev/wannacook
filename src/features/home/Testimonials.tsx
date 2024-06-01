@@ -74,7 +74,7 @@ function Testimonials() {
       </Heading>
       <StyledTestimonials>
         <Testimonial>
-          <img src="/src/data/dave.jpg" alt="dave" />
+          <img src="/dave.jpg" alt="dave" />
           <div>
             <p>David R</p>
             <blockquote>
@@ -86,7 +86,7 @@ function Testimonials() {
           </div>
         </Testimonial>
         <Testimonial>
-          <img src="/src/data/hannah.jpg" alt="hannah" />
+          <img src="/hannah.jpg" alt="hannah" />
           <div>
             <p>Emily L</p>
             <blockquote>
@@ -99,7 +99,7 @@ function Testimonials() {
           </div>
         </Testimonial>
         <Testimonial>
-          <img src="/src/data/steve.jpg" alt="steve" />
+          <img src="/steve.jpg" alt="steve" />
           <div>
             <p>John M.</p>
             <blockquote>
@@ -111,7 +111,7 @@ function Testimonials() {
           </div>
         </Testimonial>
         <Testimonial>
-          <img src="/src/data/customer-3.jpg" alt="dave" />
+          <img src="/customer-3.jpg" alt="dave" />
           <div>
             <p>Sarah W</p>
             <blockquote>

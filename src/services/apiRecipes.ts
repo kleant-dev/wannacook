@@ -1,9 +1,7 @@
 import { RecipeHeaderType } from "../features/recipes/RecipesList";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 const baseUrl = "https://api.spoonacular.com";
 const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
-
 const searchQueryUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=`;
 const cuisineUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&cuisine=`;
 const mealTypeUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&type=`;
@@ -164,7 +162,7 @@ export let details: undefined | RecipeDetails;
 
 export async function getRecipeDetails(
   id: string | undefined
-): Promise<RecipeDetails | null> {
+): Promise<RecipeDetails | undefined> {
   try {
     const res = await fetch(
       `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`
@@ -181,4 +179,13 @@ export async function getRecipeDetails(
       err instanceof Error ? err.message : "Something went wrong"
     );
   }
+}
+
+export async function getFavourites(
+  favorites: number[]
+): Promise<(RecipeDetails | undefined)[]> {
+  const res = favorites.map(async (id) => await getRecipeDetails(String(id)));
+  const data = await Promise.all(res);
+  if (!data) throw new Error("Could not find any recipes");
+  return data;
 }

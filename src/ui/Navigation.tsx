@@ -33,6 +33,7 @@ const Header = styled.header`
 const Nav = styled.ul<{ isOpen: boolean; isDesktop: boolean }>`
   list-style: none;
   display: ${({ isDesktop }) => (isDesktop ? "flex" : "none")};
+  display: flex;
   gap: 6.4rem;
   padding: 0 8.2rem;
   align-items: center;
@@ -102,7 +103,6 @@ const MenuButton = styled.button`
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
-
   const updateMedia = () => {
     setIsDesktop(window.innerWidth > 768);
     if (window.innerWidth > 768) {

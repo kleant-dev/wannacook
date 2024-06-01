@@ -1,14 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from "styled-components";
 import { CenteredContainer } from "../../ui/CenteredContainer";
 
 const Title = styled.h3`
   margin: 0 auto;
   font-size: 4.3rem;
-`;
-
-const StyledAboutUs = styled.div`
-  display: flex;
 `;
 
 const Header = styled.div`
@@ -29,6 +24,14 @@ const Text = styled.p`
   line-height: 1.8;
 `;
 
+const Developer = styled.p`
+  text-align: center;
+  & span {
+    color: #f08c00;
+    font-weight: 600;
+  }
+`;
+
 function AboutUs() {
   return (
     <CenteredContainer>
@@ -44,6 +47,9 @@ function AboutUs() {
           chef or a kitchen novice, our app provides a wealth of culinary
           inspiration to suit every palate and dietary preference.
         </Text>
+        <Developer>
+          Developed by <span>Bajraktari Solutions</span>
+        </Developer>
       </Content>
     </CenteredContainer>
   );

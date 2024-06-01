@@ -1,7 +1,12 @@
 import AboutUs from "../features/about/AboutUs";
+import { StyledPage } from "./Favourites";
 
 function About() {
-  return <AboutUs />;
+  return (
+    <StyledPage>
+      <AboutUs />
+    </StyledPage>
+  );
 }
 
 export default About;

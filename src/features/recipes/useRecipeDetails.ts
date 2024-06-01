@@ -9,7 +9,7 @@ export function useRecipeDetails() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["recipeDetails"],
+    queryKey: ["recipeDetails", id],
     queryFn: () => getRecipeDetails(id),
   });
   return { recipeDetails, isLoading, error };

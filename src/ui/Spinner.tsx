@@ -14,12 +14,15 @@ const StyledSpinner = styled.div`
   & div {
     box-sizing: border-box;
   }
-  & {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
+
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+
   & div {
     position: absolute;
     width: 6.4px;

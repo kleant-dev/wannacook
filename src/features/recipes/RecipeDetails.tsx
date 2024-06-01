@@ -3,7 +3,13 @@ import { useRecipeDetails } from "./useRecipeDetails";
 // import Spinner from "../../ui/Spinner";
 import { CenteredContainer } from "../../ui/CenteredContainer";
 import { IoMdClose } from "react-icons/io";
-import { MdOutlineDone } from "react-icons/md";
+import {
+  MdOutlineDone,
+  MdOutlineFavorite,
+  MdOutlineFavoriteBorder,
+} from "react-icons/md";
+import { useRecipesContext } from "../../context/RecipesContext";
+import Spinner from "../../ui/Spinner";
 
 const StyledRecipeDetails = styled.section`
   display: grid;
@@ -29,6 +35,17 @@ const Header = styled.div`
     font-size: 5.4rem;
     text-align: center;
     color: #333;
+  }
+  & p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #760000;
+    transition: all 1.9s;
   }
 `;
 
@@ -207,9 +224,9 @@ const Nutrients = styled.div`
   }
 `;
 function RecipeDetails() {
-  const { recipeDetails, isLoading, error } = useRecipeDetails();
-  if (isLoading) return <p>Hello</p>;
-  if (error) return <p>Something went wrong</p>;
+  const { recipeDetails, isLoading } = useRecipeDetails();
+  const { dispatch, favorites } = useRecipesContext();
+  if (isLoading) return <Spinner />;
 
   if (recipeDetails) {
     return (
@@ -218,6 +235,25 @@ function RecipeDetails() {
           <img src={recipeDetails.image} alt={recipeDetails?.title} />
           <Header>
             <h2>{recipeDetails.title}</h2>
+            <p
+              onClick={() => {
+                !favorites.includes(recipeDetails.id)
+                  ? dispatch({ type: "addFavorite", payload: recipeDetails.id })
+                  : dispatch({
+                      type: "removeFavorite",
+                      payload: recipeDetails.id,
+                    });
+              }}
+            >
+              {favorites.includes(recipeDetails.id)
+                ? "One of your favorites"
+                : "Add to favorites"}{" "}
+              {favorites.includes(recipeDetails.id) ? (
+                <MdOutlineFavorite size={24} />
+              ) : (
+                <MdOutlineFavoriteBorder size={24} />
+              )}
+            </p>
           </Header>
           <Grid>
             <MainInfo>
@@ -309,7 +345,9 @@ function RecipeDetails() {
           <Wine>
             <div>
               <h3>Wine Pairing</h3>
-              <p>{recipeDetails.winePairing.pairingText}</p>
+              <p>
+                {recipeDetails.winePairing?.pairingText || "No wine pairing"}
+              </p>
             </div>
           </Wine>
         </StyledRecipeDetails>

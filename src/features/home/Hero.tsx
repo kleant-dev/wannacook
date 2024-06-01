@@ -153,7 +153,7 @@ function Hero() {
         </HeroContent>
         <HeroImage>
           <div>
-            <img src="/src/data/woman-cooking.avif" alt="chef" />
+            <img src="/src/data/woman-cooking.webp" alt="chef" />
           </div>
         </HeroImage>
       </StyledHero>
